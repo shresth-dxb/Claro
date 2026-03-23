@@ -84,7 +84,7 @@ export default function DashboardPage() {
             </select>
           </div>
           <div className="flex items-end gap-2">
-            <Link href="/upload" className="flex-1">
+            <Link href="/dashboard/upload" className="flex-1">
               <Button variant="primary" fullWidth>
                 Upload Document
               </Button>
@@ -105,7 +105,7 @@ export default function DashboardPage() {
           <p className="text-gray-600 mb-6">
             Upload your first document to get started
           </p>
-          <Link href="/upload">
+          <Link href="/dashboard/upload">
             <Button variant="primary">Upload Document</Button>
           </Link>
         </div>
@@ -155,7 +155,7 @@ export default function DashboardPage() {
                     </td>
                     <td className="py-4 px-4">
                       {doc.status === 'COMPLETED' && (
-                        <Link href={`/documents/${doc.id}`}>
+                        <Link href={`/dashboard/documents/${doc.id}`}>
                           <Button variant="primary" size="sm">
                             View
                           </Button>

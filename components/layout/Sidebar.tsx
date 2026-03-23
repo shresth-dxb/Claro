@@ -31,9 +31,9 @@ export function Sidebar() {
           📊 Dashboard
         </Link>
         <Link
-          href="/upload"
+          href="/dashboard/upload"
           className={`px-4 py-2 rounded-lg transition-colors ${
-            isActive('/upload')
+            isActive('/dashboard/upload')
               ? 'bg-blue-50 text-blue-600 font-medium'
               : 'text-gray-600 hover:bg-gray-50'
           }`}
@@ -41,9 +41,9 @@ export function Sidebar() {
           📤 Upload Document
         </Link>
         <Link
-          href="/history"
+          href="/dashboard/history"
           className={`px-4 py-2 rounded-lg transition-colors ${
-            isActive('/history')
+            isActive('/dashboard/history')
               ? 'bg-blue-50 text-blue-600 font-medium'
               : 'text-gray-600 hover:bg-gray-50'
           }`}

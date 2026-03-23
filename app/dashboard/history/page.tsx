@@ -59,7 +59,7 @@ export default function HistoryPage() {
               <option value="name">File Name</option>
             </select>
           </div>
-          <Link href="/upload">
+          <Link href="/dashboard/upload">
             <Button variant="primary">Upload New Document</Button>
           </Link>
         </div>
@@ -77,7 +77,7 @@ export default function HistoryPage() {
           <p className="text-gray-600 mb-6">
             Start by uploading your first document
           </p>
-          <Link href="/upload">
+          <Link href="/dashboard/upload">
             <Button variant="primary">Upload Document</Button>
           </Link>
         </div>
@@ -138,7 +138,7 @@ export default function HistoryPage() {
 
                 <div className="flex gap-2">
                   {doc.status === 'COMPLETED' && (
-                    <Link href={`/documents/${doc.id}`}>
+                    <Link href={`/dashboard/documents/${doc.id}`}>
                       <Button variant="primary" size="sm">
                         View Analysis
                       </Button>
