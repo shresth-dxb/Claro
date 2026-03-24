@@ -67,17 +67,7 @@ export function Hero() {
               </Link>
             </div>
 
-            {/* Trust badge */}
-            <p
-              className={`text-sm text-gray-500 dark:text-slate-500 transition-all duration-700 ${
-                hasAnimated
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-6'
-              }`}
-              style={{ transitionDelay: '800ms' }}
-            >
-              No credit card required. Start analyzing documents in seconds.
-            </p>
+            {/* Trust badge (removed as requested) */}
           </div>
 
           {/* Right: Dashboard Preview */}

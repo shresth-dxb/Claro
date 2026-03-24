@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+import { ThemeSwitch } from '@/components/shared/ThemeSwitch'
 
 export function Navbar() {
   const router = useRouter()
@@ -28,16 +29,17 @@ export function Navbar() {
           <div className="hidden md:flex items-center gap-6">
             <Link
               href="/dashboard"
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              className="text-gray-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >
               Dashboard
             </Link>
             <Link
               href="/upload"
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              className="text-gray-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >
               Upload
             </Link>
+            <ThemeSwitch />
             <button
               onClick={handleLogout}
               className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
@@ -72,18 +74,21 @@ export function Navbar() {
           <div className="md:hidden mt-4 border-t pt-4 flex flex-col gap-4">
             <Link
               href="/dashboard"
-              className="text-gray-700 hover:text-blue-600"
+              className="text-gray-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400"
               onClick={() => setIsOpen(false)}
             >
               Dashboard
             </Link>
             <Link
               href="/upload"
-              className="text-gray-700 hover:text-blue-600"
+              className="text-gray-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400"
               onClick={() => setIsOpen(false)}
             >
               Upload
             </Link>
+            <div className="px-2">
+              <ThemeSwitch />
+            </div>
             <button
               onClick={handleLogout}
               className="w-full px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700"

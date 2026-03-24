@@ -37,10 +37,10 @@ export default function HistoryPage() {
     <div className="max-w-6xl mx-auto">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-900 mb-2">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-slate-100 mb-2">
           Document History
         </h1>
-        <p className="text-gray-600">
+        <p className="text-gray-600 dark:text-slate-300">
           View and manage all your analyzed documents
         </p>
       </div>

@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
-import { ThemeToggle } from '@/components/shared/ThemeToggle'
 import { Menu, X } from 'lucide-react'
 
 export function Navbar() {
@@ -50,10 +49,8 @@ export function Navbar() {
             </Link>
           </div>
 
-          {/* Right side: Theme toggle + Auth buttons */}
+          {/* Right side: Auth buttons */}
           <div className="flex items-center gap-3">
-            <ThemeToggle />
-
             <div className="hidden sm:flex items-center gap-2">
               <Link
                 href="/login"

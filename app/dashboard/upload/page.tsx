@@ -23,10 +23,10 @@ export default function UploadPage() {
   return (
     <div className="max-w-3xl mx-auto">
       <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-900 mb-2">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-slate-100 mb-2">
           Upload Document
         </h1>
-        <p className="text-gray-600">
+        <p className="text-gray-600 dark:text-slate-300">
           Upload a document for AI-powered analysis. Supported formats: PDF, DOCX, TXT
         </p>
       </div>

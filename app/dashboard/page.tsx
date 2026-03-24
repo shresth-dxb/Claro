@@ -34,8 +34,8 @@ export default function DashboardPage() {
     <div className="max-w-7xl mx-auto">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-900 mb-2">Dashboard</h1>
-        <p className="text-gray-600">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-slate-100 mb-2">Dashboard</h1>
+        <p className="text-gray-600 dark:text-slate-300">
           Manage and analyze your documents
         </p>
       </div>
@@ -50,8 +50,8 @@ export default function DashboardPage() {
         ].map((stat, i) => (
           <div key={i} className="card text-center">
             <div className="text-3xl mb-2">{stat.icon}</div>
-            <p className="text-gray-600 text-sm">{stat.label}</p>
-            <p className="text-3xl font-bold text-gray-900">{stat.value}</p>
+            <p className="text-gray-600 dark:text-slate-300 text-sm">{stat.label}</p>
+            <p className="text-3xl font-bold text-gray-900 dark:text-white">{stat.value}</p>
           </div>
         ))}
       </div>
@@ -114,17 +114,17 @@ export default function DashboardPage() {
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="border-b border-gray-200">
-                  <th className="text-left py-3 px-4 font-semibold text-gray-700">
+                <tr className="border-b border-gray-200 dark:border-slate-700">
+                  <th className="text-left py-3 px-4 font-semibold text-gray-700 dark:text-slate-200">
                     Document
                   </th>
-                  <th className="text-left py-3 px-4 font-semibold text-gray-700">
+                  <th className="text-left py-3 px-4 font-semibold text-gray-700 dark:text-slate-200">
                     Status
                   </th>
-                  <th className="text-left py-3 px-4 font-semibold text-gray-700">
+                  <th className="text-left py-3 px-4 font-semibold text-gray-700 dark:text-slate-200">
                     Uploaded
                   </th>
-                  <th className="text-left py-3 px-4 font-semibold text-gray-700">
+                  <th className="text-left py-3 px-4 font-semibold text-gray-700 dark:text-slate-200">
                     Actions
                   </th>
                 </tr>
@@ -133,14 +133,14 @@ export default function DashboardPage() {
                 {filteredDocuments.map((doc) => (
                   <tr
                     key={doc.id}
-                    className="border-b border-gray-200 hover:bg-gray-50 transition-colors"
+                    className="border-b border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
                   >
                     <td className="py-4 px-4">
                       <div>
-                        <p className="font-semibold text-gray-900">
+                        <p className="font-semibold text-gray-900 dark:text-slate-100">
                           {doc.fileName}
                         </p>
-                        <p className="text-sm text-gray-600">
+                        <p className="text-sm text-gray-600 dark:text-slate-400">
                           {(doc.fileSize / 1024 / 1024).toFixed(2)} MB
                         </p>
                       </div>
@@ -148,7 +148,7 @@ export default function DashboardPage() {
                     <td className="py-4 px-4">
                       <StatusBadge status={doc.status} />
                     </td>
-                    <td className="py-4 px-4 text-sm text-gray-600">
+                    <td className="py-4 px-4 text-sm text-gray-600 dark:text-slate-400">
                       {formatDistanceToNow(new Date(doc.uploadedAt), {
                         addSuffix: true,
                       })}
