@@ -1,0 +1,89 @@
+'use client'
+
+import Link from 'next/link'
+import { useEffect, useRef, useState } from 'react'
+import { DashboardPreview } from './DashboardPreview'
+
+export function Hero() {
+  const [hasAnimated, setHasAnimated] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    // Trigger animation on mount
+    setHasAnimated(true)
+  }, [])
+
+  return (
+    <section className="relative pt-32 pb-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+          {/* Left: Content */}
+          <div className="space-y-8 flex flex-col justify-center">
+            {/* Headline */}
+            <h1
+              ref={ref}
+              className={`text-5xl sm:text-6xl lg:text-7xl font-serif font-bold leading-[1.1] text-gray-900 dark:text-white transition-all duration-700 ${
+                hasAnimated
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-6'
+              }`}
+              style={{ transitionDelay: '200ms' }}
+            >
+              Transform Complex Documents Into Clear Insights
+            </h1>
+
+            {/* Subtitle */}
+            <p
+              className={`text-lg sm:text-xl text-gray-600 dark:text-slate-400 leading-relaxed transition-all duration-700 ${
+                hasAnimated
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-6'
+              }`}
+              style={{ transitionDelay: '400ms' }}
+            >
+              Claro uses AI to analyze tax returns, contracts, insurance policies, and more—then turns them into plain English summaries, key metrics, actionable items, and critical alerts.
+            </p>
+
+            {/* CTA Buttons */}
+            <div
+              className={`flex flex-col sm:flex-row gap-4 transition-all duration-700 ${
+                hasAnimated
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-6'
+              }`}
+              style={{ transitionDelay: '600ms' }}
+            >
+              <Link
+                href="/signup"
+                className="px-8 py-4 bg-primary text-white rounded-lg font-semibold hover:bg-green-700 hover:shadow-lg hover:scale-105 transition-all duration-300 active:scale-95 text-center"
+              >
+                Get Started Free
+              </Link>
+              <Link
+                href="#features"
+                className="px-8 py-4 border-2 border-primary text-primary dark:text-primary rounded-lg font-semibold hover:bg-green-50 dark:hover:bg-slate-900 transition-all duration-300 text-center"
+              >
+                Learn More
+              </Link>
+            </div>
+
+            {/* Trust badge */}
+            <p
+              className={`text-sm text-gray-500 dark:text-slate-500 transition-all duration-700 ${
+                hasAnimated
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-6'
+              }`}
+              style={{ transitionDelay: '800ms' }}
+            >
+              No credit card required. Start analyzing documents in seconds.
+            </p>
+          </div>
+
+          {/* Right: Dashboard Preview */}
+          <DashboardPreview />
+        </div>
+      </div>
+    </section>
+  )
+}
