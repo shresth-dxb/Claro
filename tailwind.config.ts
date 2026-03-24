@@ -18,6 +18,11 @@ const config = {
         warning: '#F59E0B',
         error: '#EF4444',
         info: '#3B82F6',
+        dark: {
+          bg: '#000000',
+          card: '#111111',
+          border: '#222222',
+        },
       },
       animation: {
         'fade-in-up': 'fadeInUp 0.6s ease-out forwards',

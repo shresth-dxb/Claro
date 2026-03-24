@@ -12,7 +12,7 @@
 
   :root.dark {
     color-scheme: dark;
-    --gradient-hero: linear-gradient(135deg, #1f2937 0%, #064e3b 100%);
+    --gradient-hero: #000000;
   }
 
   * {
@@ -35,7 +35,7 @@
   }
 
   body.dark {
-    background: var(--gradient-hero);
+    background: #000000;
     color: #f1f5f9;
   }
 }
@@ -50,7 +50,7 @@
   }
 
   .btn-secondary {
-    @apply btn bg-gray-200 text-gray-800 hover:bg-gray-300 dark:bg-slate-700 dark:text-slate-100 dark:hover:bg-slate-600;
+    @apply btn bg-gray-200 text-gray-800 hover:bg-gray-300 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800;
   }
 
   .btn-danger {
@@ -66,11 +66,11 @@
   }
 
   .btn-outline {
-    @apply btn border-2 border-primary text-primary bg-transparent hover:bg-green-50 dark:hover:bg-slate-900 hover:border-green-700;
+    @apply btn border-2 border-primary text-primary bg-transparent hover:bg-green-50 dark:hover:bg-slate-900/50 hover:border-green-700;
   }
 
   .card {
-    @apply bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg dark:bg-slate-800 dark:border dark:border-slate-700;
+    @apply bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg dark:bg-slate-900 dark:border dark:border-slate-800;
   }
 
   .badge {
@@ -94,11 +94,11 @@
   }
 
   .input {
-    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-slate-700 dark:border-slate-600 dark:text-slate-100;
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-slate-900 dark:border-slate-800 dark:text-slate-100;
   }
 
   .label {
-    @apply block text-sm font-medium text-gray-700 dark:text-slate-200 mb-2;
+    @apply block text-sm font-medium text-gray-700 dark:text-slate-300 mb-2;
   }
 
   .transition-theme {
@@ -118,7 +118,7 @@
   }
 
   .text-muted {
-    @apply text-gray-600 dark:text-slate-400;
+    @apply text-gray-600 dark:text-slate-300;
   }
 
   .gradient-text {

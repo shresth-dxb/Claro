@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { File, DollarSign, Calendar, CheckSquare } from 'lucide-react'
 
 interface Document {
   id: string
@@ -34,17 +35,23 @@ const SAMPLE_DOCUMENTS: Document[] = [
   },
 ]
 
-const SAMPLE_METRICS = [
-  { label: 'Total Amount', value: '$145,000', icon: '💰' },
-  { label: 'Due Date', value: 'Apr 15, 2024', icon: '📅' },
-  { label: 'Action Items', value: '8 tasks', icon: '✓' },
+interface Metric {
+  label: string
+  value: string
+  icon: React.ReactNode
+}
+
+const SAMPLE_METRICS: Metric[] = [
+  { label: 'Total Amount', value: '$145,000', icon: <DollarSign className="w-6 h-6" strokeWidth={2} /> },
+  { label: 'Due Date', value: 'Apr 15, 2024', icon: <Calendar className="w-6 h-6" strokeWidth={2} /> },
+  { label: 'Action Items', value: '8 tasks', icon: <CheckSquare className="w-6 h-6" strokeWidth={2} /> },
 ]
 
 function StatusBadge({ status }: { status: Document['status'] }) {
   const styles = {
     completed: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100',
     processing: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100',
-    pending: 'bg-gray-100 text-gray-800 dark:bg-slate-700 dark:text-slate-100',
+    pending: 'bg-gray-100 text-gray-800 dark:bg-slate-800 dark:text-slate-200',
   }
   const labels = {
     completed: 'Completed',
@@ -64,6 +71,7 @@ export function DashboardPreview() {
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    const currentRef = ref.current
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -73,13 +81,13 @@ export function DashboardPreview() {
       { threshold: 0.1 }
     )
 
-    if (ref.current) {
-      observer.observe(ref.current)
+    if (currentRef) {
+      observer.observe(currentRef)
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current)
+      if (currentRef) {
+        observer.unobserve(currentRef)
       }
     }
   }, [])
@@ -94,14 +102,14 @@ export function DashboardPreview() {
       }`}
       style={{ transitionDelay: '500ms' }}
     >
-      <div className="relative bg-white dark:bg-slate-900 rounded-2xl shadow-2xl overflow-hidden border border-gray-200 dark:border-slate-700 hover:shadow-3xl transition-shadow duration-300">
+      <div className="relative bg-white dark:bg-slate-900 rounded-2xl shadow-2xl overflow-hidden border border-gray-200 dark:border-slate-800 hover:shadow-3xl transition-shadow duration-300">
         {/* Header */}
-        <div className="px-6 py-4 border-b border-gray-200 dark:border-slate-700 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-slate-800 dark:to-slate-900">
+        <div className="px-6 py-4 border-b border-gray-200 dark:border-slate-800 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-slate-800 dark:to-slate-900">
           <h3 className="text-sm font-semibold text-gray-900 dark:text-white">Recent Documents</h3>
         </div>
 
         {/* Documents List */}
-        <div className="divide-y divide-gray-200 dark:divide-slate-700">
+        <div className="divide-y divide-gray-200 dark:divide-slate-800">
           {SAMPLE_DOCUMENTS.map((doc, idx) => (
             <div
               key={doc.id}
@@ -117,9 +125,7 @@ export function DashboardPreview() {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3 flex-1 min-w-0">
                   <div className="w-10 h-10 rounded-lg bg-green-100 dark:bg-green-900 flex items-center justify-center flex-shrink-0">
-                    <svg className="w-5 h-5 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clipRule="evenodd" />
-                    </svg>
+                    <File className="w-5 h-5 text-green-600 dark:text-green-400" strokeWidth={2} />
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="text-sm font-medium text-gray-900 dark:text-white truncate">{doc.name}</p>
@@ -144,10 +150,10 @@ export function DashboardPreview() {
                 animation: hasAnimated ? `fadeIn 0.6s ease-out ${600 + idx * 100}ms both` : 'none',
               }}
             >
-              <div className="text-lg font-semibold text-primary dark:text-emerald-400">
+              <div className="text-primary dark:text-emerald-400 flex justify-center mb-1">
                 {metric.icon}
               </div>
-              <p className="text-xs text-gray-600 dark:text-slate-400 mt-1">{metric.label}</p>
+              <p className="text-xs text-gray-600 dark:text-slate-400">{metric.label}</p>
               <p className="text-xs font-bold text-gray-900 dark:text-white mt-0.5">{metric.value}</p>
             </div>
           ))}

@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { ThemeToggle } from '@/components/shared/ThemeToggle'
+import { Menu, X } from 'lucide-react'
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -20,7 +21,7 @@ export function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 animate-slide-down ${
         hasScrolled
-          ? 'bg-white/95 dark:bg-slate-950/95 backdrop-blur-md shadow-lg'
+          ? 'bg-white/95 dark:bg-black/95 backdrop-blur-md shadow-lg'
           : 'bg-transparent'
       }`}
     >
@@ -68,7 +69,7 @@ export function Navbar() {
             <div className="hidden sm:flex items-center gap-2">
               <Link
                 href="/login"
-                className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-slate-200 hover:text-primary dark:hover:text-primary transition-colors duration-300"
+                className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors duration-300"
               >
                 Log in
               </Link>
@@ -86,17 +87,11 @@ export function Navbar() {
               className="md:hidden p-2 rounded-lg text-gray-700 dark:text-slate-300 hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors duration-300"
               aria-label="Toggle menu"
             >
-              <svg
-                className={`w-6 h-6 transition-transform duration-300 ${isOpen ? 'rotate-90' : ''}`}
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+              {isOpen ? (
+                <X className="w-6 h-6" strokeWidth={2} />
+              ) : (
+                <Menu className="w-6 h-6" strokeWidth={2} />
+              )}
             </button>
           </div>
         </div>
@@ -122,10 +117,10 @@ export function Navbar() {
             >
               About
             </Link>
-            <div className="px-4 py-4 border-t border-gray-200 dark:border-slate-700 gap-2 flex">
+            <div className="px-4 py-4 border-t border-gray-200 dark:border-slate-800 gap-2 flex">
               <Link
                 href="/login"
-                className="flex-1 px-4 py-2 text-sm font-medium text-center text-gray-700 dark:text-slate-200 hover:text-primary dark:hover:text-primary transition-colors duration-300"
+                className="flex-1 px-4 py-2 text-sm font-medium text-center text-gray-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors duration-300"
               >
                 Log in
               </Link>
