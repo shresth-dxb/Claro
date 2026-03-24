@@ -9,15 +9,7 @@ export function Footer() {
             © {currentYear} Claro. All rights reserved.
           </div>
           <div className="flex gap-6 text-sm">
-            <a href="#" className="text-gray-600 dark:text-slate-400 hover:text-primary dark:hover:text-emerald-400 transition-colors duration-300">
-              Privacy
-            </a>
-            <a href="#" className="text-gray-600 dark:text-slate-400 hover:text-primary dark:hover:text-emerald-400 transition-colors duration-300">
-              Terms
-            </a>
-            <a href="#" className="text-gray-600 dark:text-slate-400 hover:text-primary dark:hover:text-emerald-400 transition-colors duration-300">
-              Support
-            </a>
+            {/* Links removed per request: Privacy, Terms, Support */}
           </div>
         </div>
       </div>

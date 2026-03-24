@@ -14,24 +14,24 @@ interface Document {
 const SAMPLE_DOCUMENTS: Document[] = [
   {
     id: '1',
-    name: '2024 Tax Return',
+    name: '2026 Tax Return',
     size: '2.4 MB',
     status: 'completed',
-    date: '2024-03-20',
+    date: '2026-03-20',
   },
   {
     id: '2',
     name: 'Commercial Lease',
     size: '1.8 MB',
     status: 'completed',
-    date: '2024-03-19',
+    date: '2026-03-19',
   },
   {
     id: '3',
     name: 'Insurance Policy Review',
     size: '3.2 MB',
     status: 'processing',
-    date: '2024-03-21',
+    date: '2026-03-21',
   },
 ]
 
@@ -43,7 +43,7 @@ interface Metric {
 
 const SAMPLE_METRICS: Metric[] = [
   { label: 'Total Amount', value: '$145,000', icon: <DollarSign className="w-6 h-6" strokeWidth={2} /> },
-  { label: 'Due Date', value: 'Apr 15, 2024', icon: <Calendar className="w-6 h-6" strokeWidth={2} /> },
+  { label: 'Due Date', value: 'Apr 15, 2026', icon: <Calendar className="w-6 h-6" strokeWidth={2} /> },
   { label: 'Action Items', value: '8 tasks', icon: <CheckSquare className="w-6 h-6" strokeWidth={2} /> },
 ]
 

@@ -57,7 +57,7 @@ export function Hero() {
                 href="/signup"
                 className="px-8 py-4 bg-primary text-white rounded-lg font-semibold hover:bg-green-700 hover:shadow-lg hover:scale-105 transition-all duration-300 active:scale-95 text-center"
               >
-                Get Started Free
+                Get Started
               </Link>
               <Link
                 href="#features"

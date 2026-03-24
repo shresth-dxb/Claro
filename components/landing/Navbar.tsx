@@ -48,18 +48,6 @@ export function Navbar() {
             >
               Features
             </Link>
-            <Link
-              href="#"
-              className="text-gray-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors duration-300 text-sm font-medium"
-            >
-              Pricing
-            </Link>
-            <Link
-              href="#"
-              className="text-gray-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors duration-300 text-sm font-medium"
-            >
-              About
-            </Link>
           </div>
 
           {/* Right side: Theme toggle + Auth buttons */}
@@ -104,18 +92,6 @@ export function Navbar() {
               className="block px-4 py-2 text-gray-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors duration-300 text-sm font-medium"
             >
               Features
-            </Link>
-            <Link
-              href="#"
-              className="block px-4 py-2 text-gray-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors duration-300 text-sm font-medium"
-            >
-              Pricing
-            </Link>
-            <Link
-              href="#"
-              className="block px-4 py-2 text-gray-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors duration-300 text-sm font-medium"
-            >
-              About
             </Link>
             <div className="px-4 py-4 border-t border-gray-200 dark:border-slate-800 gap-2 flex">
               <Link
