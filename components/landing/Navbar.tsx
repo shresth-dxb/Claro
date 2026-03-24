@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
+import { ThemeSwitch } from '@/components/shared/ThemeSwitch'
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -49,8 +50,9 @@ export function Navbar() {
             </Link>
           </div>
 
-          {/* Right side: Auth buttons */}
+          {/* Right side: Theme and auth buttons */}
           <div className="flex items-center gap-3">
+            <ThemeSwitch />
             <div className="hidden sm:flex items-center gap-2">
               <Link
                 href="/login"
