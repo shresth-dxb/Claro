@@ -221,15 +221,27 @@
     100% { transform: rotate(0deg); }
   }
 
-  .switch input:checked + .slider {
-    background-color: #183153;
-  }
+/* Typewriter animation */
+.text-type {
+  display: inline-block;
+  white-space: pre-wrap;
+}
 
-  .switch input:focus + .slider {
-    box-shadow: 0 0 1px #183153;
-  }
+.text-type__cursor {
+  margin-left: 0.25rem;
+  display: inline-block;
+  opacity: 1;
+  animation: blink 0.7s step-end infinite;
+}
 
-  .switch input:checked + .slider:before {
+.text-type__cursor--hidden {
+  display: none;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
     transform: translateX(30px);
   }
 

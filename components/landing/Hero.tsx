@@ -6,12 +6,40 @@ import { DashboardPreview } from './DashboardPreview'
 
 export function Hero() {
   const [hasAnimated, setHasAnimated] = useState(false)
+  const [typedText, setTypedText] = useState('')
+  const [cursorVisible, setCursorVisible] = useState(true)
   const ref = useRef<HTMLDivElement>(null)
+  const text = 'Transform Complex Documents Into Clear Insights'
+  const [isTypingComplete, setIsTypingComplete] = useState(false)
 
   useEffect(() => {
     // Trigger animation on mount
     setHasAnimated(true)
-  }, [])
+
+    // Typewriter effect
+    let i = 0
+    const typingInterval = setInterval(() => {
+      if (i < text.length) {
+        setTypedText(text.substring(0, i + 1))
+        i++
+      } else {
+        clearInterval(typingInterval)
+        setIsTypingComplete(true)
+      }
+    }, 70)
+
+    return () => clearInterval(typingInterval)
+  }, [text])
+
+  useEffect(() => {
+    // Hide cursor after typing is complete
+    if (isTypingComplete) {
+      const timer = setTimeout(() => {
+        setCursorVisible(false)
+      }, 1500)
+      return () => clearTimeout(timer)
+    }
+  }, [isTypingComplete])
 
   return (
     <section className="relative pt-32 pb-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -29,7 +57,8 @@ export function Hero() {
               }`}
               style={{ transitionDelay: '200ms' }}
             >
-              Transform Complex Documents Into Clear Insights
+              <span className="text-type">{typedText}</span>
+              {cursorVisible && <span className="text-type__cursor">|</span>}
             </h1>
 
             {/* Subtitle */}
